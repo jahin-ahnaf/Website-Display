@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.2.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jahin Ahnaf</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <div class="toggle-button" onclick="socialEnable()"></div>
+    <div class="social-links">
+        <a class="social" href="https://www.facebook.com/jahin.ahnaf.16/" target="_blank"><i class="fi fi-brands-facebook"></i></a>
+        <a class="social" href="https://www.instagram.com/jahin._.ahnaf"><i class="fi fi-brands-instagram"></i></a>
+        <a class="social" href="https://github.com/jahin-ahnaf"><i class="fi fi-brands-github"></i></a>
+        <a class="social" href="https://twitter.com/jahinahnaf_ja"><i class="fi fi-brands-twitter-alt"></i></a>
+        <a class="social" href="https://www.reddit.com/user/Ja-Tech/"><i class="fi fi-brands-reddit"></i></a>
+    </div>
+    <div class="laptop-monitor" onclick="menuEnable()"></div>
+    <div class="laptop-keyboard"></div>
+    <nav class="navigation-bar">
+        <a class="links">Home</a>
+        <a class="links">About</a>
+        <a class="links">Contact</a>
+    </nav>
+    
+    <div data-aos="fade-up" data-aos-duration="3000" class="title">
+        <p>JAHIN AHNAF</p>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="3000" class="center_all">
+        <h1 class="main_header">Jahin</h1>
+        <div data-aos="fade-up" data-aos-duration="3000" class="subheading">WAY TO BECOME AN ALL-ROUNDER</div>
+    </div>
+
+    
+    
+    <div class="cursor"></div>
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+        });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursor = document.querySelector('.cursor');
+            let isMouseDown = false;
+
+            document.addEventListener('mousedown', function (e) {
+                if (e.button === 0) { // Check if left mouse button is pressed
+                    isMouseDown = true;
+                    cursor.style.width = '30px'; // Increase cursor width
+                    cursor.style.height = '30px'; // Increase cursor height
+                }
+            });
+
+            document.addEventListener('mouseup', function (e) {
+                if (e.button === 0) { // Check if left mouse button is released
+                    isMouseDown = false;
+                    cursor.style.width = '20px'; // Revert cursor width
+                    cursor.style.height = '20px'; // Revert cursor height
+                }
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!isMouseDown) {
+                    cursor.style.left = e.clientX - 10 + 'px'; // Adjust cursor position based on mouse position
+                    cursor.style.top = e.clientY - 10 + 'px'; // Adjust cursor position based on mouse position
+                } else {
+                    cursor.style.left = e.clientX - 15 + 'px'; // Adjust cursor position based on mouse position
+                    cursor.style.top = e.clientY - 15 + 'px'; // Adjust cursor position based on mouse position
+                }
+            });
+        });
+    </script>
+    <script>
+        var menu = document.querySelector('.navigation-bar')
+        function menuEnable() {
+            menu.classList.toggle('enabled');
+        }
+        var social = document.querySelector('.social-links');
+        var button = document.querySelector('.toggle-button');
+        function socialEnable() {
+            social.classList.toggle('social-enabled');
+            button.classList.toggle('button-enabled');
+        }
+    </script>
+</body>
+</html>
